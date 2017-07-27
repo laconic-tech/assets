@@ -9,19 +9,18 @@ tools
  +- upgrade/maintain database tool  
  +- process monitoring  
   
-  
 projects  
  +- spark launcher   
  +- hdfs file upload  
 
 docs  
- +- sdlc    
+ +- sdlc   
+ ++- tooling and workflow
  ++- git  
- +++- pull request workflow  
+ +++- pull request workflow and how-to 
  ++++- release workflow  
  ++- semantic versioning  
  ++- artifact publishing  
  ++- jenkins  
- ++++- JenkinsFile samples  
+ ++++- JenkinsFile sample
  ++- ansible samples  
- 
