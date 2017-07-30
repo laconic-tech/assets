@@ -1,0 +1,40 @@
+node {
+
+   branch_name = env.BRANCH
+   configuration = load_branch_configuration(branch_name)
+   build_version = "${configuration.version}.${build_number}"
+
+   stage("checkout") {
+      scm checkout	
+   }
+
+   if (configuration.build) {
+      stage("build") {
+         sh "build/ci.sh --clean --build --set-version ${build_version}"
+      }
+   }
+
+   stage("static analysis") {
+      sh "build/ci.sh --test --run-analysis"
+   }
+
+   stage("collect artifacts") {
+      
+   }
+
+   stage("upload release candidate") {
+      sh "build/ci.sh --upload-artifacts"
+   }
+
+   stage("test deploy") {
+      sh "build/ci.sh --deploy-to ${configuration.deploy_environment}"
+   }
+
+   stage("validate deployment") {
+      sh "build/ci.sh --validate-deployment ${configuration.deploy_environment}"
+   }
+
+   stage("promote artifact") {
+      sh "build/ci.sh --promote-artifacts ${build_version}"
+   }
+}
