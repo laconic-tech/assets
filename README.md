@@ -1,6 +1,7 @@
 templates  
  +- unix  
  ++- init.d scripts  
+ +- akka persistence jdbc
  +- akka application   
  +- akka-http application  
  +- akka-cluster application  
