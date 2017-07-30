@@ -14,16 +14,17 @@ projects
  +- spark launcher   
  +- hdfs file upload  
 
-docs  
- +- sdlc   
- ++- tooling and workflow
+docs   
+ +- sdlc    
+ ++- tooling and workflow  
  ++- git  
  +++- pull request workflow and how-to 
  ++++- release workflow  
  ++- semantic versioning  
  ++- artifact publishing  
- ++- jenkins  
- ++++- JenkinsFile sample
+ ++- jenkins   
+ ++++- JenkinsFile sample  
+ ++++- JankinsFile branch configuration  
  ++- ansible samples  
- ++- python
- +++- build script
+ ++- python  
+ +++- build script  
